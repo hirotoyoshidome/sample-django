@@ -136,4 +136,18 @@ http://localhost:8000/hello/1/vote/
 
 * リダイレクト処理をするときにreverseメソッドを使用することでハードコーディングを防ぐことができるため、使用すること
 
+## 汎用ビュー
+* Djangoには標準で汎用的に使用できるViewが用意されている
+参考：https://docs.djangoproject.com/ja/2.2/ref/class-based-views/
 
+* urls.pyで汎用のビューを継承したviews.pyに定義されたclassを指定することで簡単簡潔に処理を記載することができる
+
+* urls.pyのpkはプライマリーキーのことでDetailView内で使用される値のためquestion_idから変更して、記載している
+
+* views.pyでは継承したクラスを設定するため、class定義の引数に継承する汎用ビューのクラスを記載する
+
+* template_nameにはテンプレートの名前を設定する
+
+* modelにはモデルクラスを指定する
+
+* 定義したget_querysetメソッドをcontext_object_nameで設定したlistの呼び出しの際に呼び出されている（裏で上書きがされている）
