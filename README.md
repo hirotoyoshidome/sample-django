@@ -106,3 +106,15 @@ python3 manage.py runserver
 http://localhost:8000/admin
 ```
 
+## views
+* 公式のチュートリアルに合わせるようにアプリケーション内のurls.py(hello/urls.py)をプロジェクトのurls.py(sample/urls.py)でincludeして読み込む
+
+* /で区切った値を取得できるようにするためにhello/urls.pyに記載することで取得できるようになる
+
+```
+http://localhost:8000/hello
+http://localhost:8000/hello/1/
+http://localhost:8000/hello/1/results/
+http://localhost:8000/hello/1/vote/
+```
+にアクセスすることでそれぞれのルーティングにアクセスすることが可能
