@@ -22,7 +22,7 @@ python3 manage.py runserver
 http://localhost:8000/hello/
 にアクセスして正常に出力されるかを確認する
 
-### ちょと触ってみてわかったこと
+### 最初だけ実施するコマンド＆わかったこと
 プロジェクトのディレクトリが
 
 ```
@@ -33,12 +33,6 @@ django-admin startproject {projectname}
 上記のコマンドで生成されたディレクトリ配下のsettings.pyでアプリケーションの管理設定ができるみたい
 
 urls.pyでルーティングの設定ができるが、参照しているのはプロジェクト配下のurls.pyである（自動で生成されるもの）
-
-各アプリケーション配下にurls.pyを手動で生成してプロジェクト配下のurls.pyにincludeするのがベストプラクティス
-
-viwes.pyでもpythonで記述するみたい（HTMLレベルで書けるらしいけどこれは未確認）
-⇒.htmlファイルでテンプレートファイルを作成する（この中でPythonスクリプトを書くことができる）
-
 
 ## Model
 * startappコマンドで生成されたディレクトリ配下（今回ではhello）にmodels.pyが存在しているためこのファイルにデータベースのスキーマに相当する記述を行う
@@ -106,7 +100,7 @@ python3 manage.py runserver
 http://localhost:8000/admin
 ```
 
-## views
+## View
 * 公式のチュートリアルに合わせるようにアプリケーション内のurls.py(hello/urls.py)をプロジェクトのurls.py(sample/urls.py)でincludeして読み込む
 
 * /で区切った値を取得できるようにするためにhello/urls.pyに記載することで取得できるようになる
