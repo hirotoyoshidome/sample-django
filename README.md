@@ -34,18 +34,59 @@ django-admin startproject {projectname}
 
 urls.pyでルーティングの設定ができるが、参照しているのはプロジェクト配下のurls.pyである（自動で生成されるもの）
 
-各アプリケーション配下にurls.pyを手動で生成してプロジェクト配下のurls.pyにincludeするのがベストプラクティス？？
+各アプリケーション配下にurls.pyを手動で生成してプロジェクト配下のurls.pyにincludeするのがベストプラクティス
 
 viwes.pyでもpythonで記述するみたい（HTMLレベルで書けるらしいけどこれは未確認）
+⇒.htmlファイルでテンプレートファイルを作成する（この中でPythonスクリプトを書くことができる）
+
+
+## Model
+* startappコマンドで生成されたディレクトリ配下（今回ではhello）にmodels.pyが存在しているためこのファイルにデータベースのスキーマに相当する記述を行う
+
+※ `__str__` メソッドは実装しておくこと
+
+※プロジェクトディレクトリ（今回ではsample）配下のsettings.pyファイルでDBについ設定することができるけど、今回は標準のSQLiteを使用する
+
+* hello/models.pyにスキーマ情報を記載したら、sample/setting.pyのINSTALLED_APPの部分にHelloConfigを読み込む設定を追記する
+
+* マイグレートファイルを作成する
 
 ```
-python manage.py migrate
+python3 manage.py makemigrations hello
 ```
-コマンドを実行したら自動でマイグレートをしてくれる？？
 
-細かい処理のファイルをどの部分に配置するとかのベストプラクティスは不明
+* マイグレートファイルのSQLの確認を実施する
 
-データベースアクセス部分(DAO)に関しても未確認
+```
+python3 manage.py sqlmigrate hello 0001
+```
+※0001はマイグレーションファイルの番号で識別する
 
+* マイグレートを実施する
 
+```
+python3 manage.py migrate
+```
+
+### model確認（おまけ）
+* APIモードに入ってDBを操作してみる
+
+```
+python3 manage.py shell
+```
+下記コマンドで確認できる
+
+```
+>>> from hello.models import Choice, Question
+>>> Question.objects.all()
+>>> from django.utils import timezone
+>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+>>> q.save()
+>>> q.id
+>>> q.question_text
+>>> q.pub_date
+>>> quit
+```
+
+## admin画面(http://localhost:8000/admin)
 
