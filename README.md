@@ -89,4 +89,20 @@ python3 manage.py shell
 ```
 
 ## admin画面(http://localhost:8000/admin)
+* 下記コマンドでスーパーユーザを追加する
+
+```
+python3 manage.py createsuperuser
+```
+プロンプトに従ってユーザーを追加する
+
+* hello/admin.pyに作成したスキーマ（models.pyに記載してあるclass）を読み込むように設定をする
+
+
+* サーバーを起動してadmin画面にログインをすることで画面からDBを操作できるようになる
+
+```
+python3 manage.py runserver
+http://localhost:8000/admin
+```
 
