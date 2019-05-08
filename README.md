@@ -160,3 +160,6 @@ http://localhost:8000/hello/1/vote/
 ```
 python3 manage.py test hello
 ```
+
+※参考：https://docs.djangoproject.com/ja/2.2/topics/testing/
+
