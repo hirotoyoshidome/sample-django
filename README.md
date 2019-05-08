@@ -151,3 +151,12 @@ http://localhost:8000/hello/1/vote/
 * modelにはモデルクラスを指定する
 
 * 定義したget_querysetメソッドをcontext_object_nameで設定したlistの呼び出しの際に呼び出されている（裏で上書きがされている）
+
+## テストコード
+* アプリケーションのディレクトリのtests.pyにテストケースを記述する
+
+* テストを実行する場合は下記にコマンドを実行する
+
+```
+python3 manage.py test hello
+```
