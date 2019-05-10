@@ -163,3 +163,11 @@ python3 manage.py test hello
 
 ※参考：https://docs.djangoproject.com/ja/2.2/topics/testing/
 
+
+## 静的コンテンツ
+* cssを導入するときは
+hello/static/hello/style.css
+のようにディレクトリを切って配置してstaticメソッドをテンプレートで使用して絶対パスを指定する
+それを使用してcssファイルを読み込むように設定をする
+
+
