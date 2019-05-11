@@ -1,0 +1,15 @@
+README.rst
+setup.py
+django_hello.egg-info/PKG-INFO
+django_hello.egg-info/SOURCES.txt
+django_hello.egg-info/dependency_links.txt
+django_hello.egg-info/top_level.txt
+hello/__init__.py
+hello/admin.py
+hello/apps.py
+hello/models.py
+hello/tests.py
+hello/urls.py
+hello/views.py
+hello/migrations/0001_initial.py
+hello/migrations/__init__.py
