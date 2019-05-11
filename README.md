@@ -220,3 +220,35 @@ vi LICENSE
 * setup.pyを作成する
 アプリケーションがどのようにビルド・インストールされるかを提供するもの
 
+
+* MANIFEST.inファイルを作成する
+どのファイルをパッケージに含めるかを設定するファイル
+
+```
+touch MANIFEST.in
+vi MANIFEST.in
+```
+
+* パッケージをビルドする
+
+```
+python3 setup.py sdist
+```
+distディレクトリにパッケージが生成される
+
+* 自分のパッケージを利用するには
+
+```
+pip3 install --user django-hello/dist/django-hello-0.1.tar.gz
+```
+
+* アンインストールするには
+
+```
+pip3 uninstall django-hello
+```
+
+ここまででチュートリアル終了
+https://docs.djangoproject.com/ja/2.2/contents/
+上記参考
+
