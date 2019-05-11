@@ -184,4 +184,39 @@ python -c "import django; print(django.__path__)"
 
 これをsample/settings.pyのTEMPLATESのdirで設定したディレクトリ（今回はtemplates/配下）に同様のディレクトリ階層で配置することで上書きをすることができる
 
+## パッケージング
+アプリケーションをパッケージングすることで再利用可能とする
+
+```
+pip3 install setuptoola
+```
+を事前にインストールしておく
+
+* アプリケーションのディレクトリごと外部のディレクトリに移動する
+
+```
+cd sampleDjango
+mkdir ../django-hello
+mv hello/ ../django-hello/
+```
+
+* README.rstを作成する
+
+```
+cd ../django-hello
+touch README.rst
+vi README.rst
+```
+
+* LICENSEファイルを作成する
+⇒　公開する際はライセンスをつけること
+⇒　多くはBSDライセンスの元に配布される
+
+```
+touch LICENSE
+vi LICENSE
+```
+
+* setup.pyを作成する
+アプリケーションがどのようにビルド・インストールされるかを提供するもの
 
