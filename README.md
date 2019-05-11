@@ -170,4 +170,18 @@ hello/static/hello/style.css
 のようにディレクトリを切って配置してstaticメソッドをテンプレートで使用して絶対パスを指定する
 それを使用してcssファイルを読み込むように設定をする
 
+## 管理画面
+* hello/admin.pyを編集することで管理画面の出力方法を変更することができる
+
+* カラムの出力順序やリレーションの貼られているモデルの表示方式、レコードの出力方式、フィルター、検索機能を追加することができる（実装済み）
+
+* 管理画面のテンプレートは
+
+```
+python -c "import django; print(django.__path__)"
+```
+コマンドでdjangoのソースファイルの場所を確認して、`django/contrib/admin/templates` 配下に存在している。
+
+これをsample/settings.pyのTEMPLATESのdirで設定したディレクトリ（今回はtemplates/配下）に同様のディレクトリ階層で配置することで上書きをすることができる
+
 
